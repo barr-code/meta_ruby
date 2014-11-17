@@ -1,15 +1,13 @@
 class Student
 
-	def Student::attr_accessor?(boolean)
-		class_eval { define_method(boolean.to_s,
-			lambda { instance_variable_get('@' + boolean.to_s.chop)})}
-		class_eval {define_method(boolean.to_s.chop+"=", lambda {|value| instance_variable_set('@'+boolean.to_s.chop, value)})}
+	def self.attr_accessor?(boolean)
+		self.send(:define_method, boolean.to_s){ instance_variable_get('@' + boolean.to_s.chop)}
+		self.send(:define_method, boolean.to_s.chop+"="){|value|instance_variable_set('@'+boolean.to_s.chop, value)}
 	end
 
 	attr_reader :badges
 	attr_accessor? :winning?
 	
-
 	def initialize
 		@badges = []
 		@winning = false
@@ -21,10 +19,8 @@ class Student
 		self.winning = true
 	end
 
-	def method_missing(method_name)
+	def method_missing(method_name, *args)
 		return false if /^has_.+?\?/.match(method_name.to_s)
+		super method_name, *args
 	end
-
-	
-
 end
