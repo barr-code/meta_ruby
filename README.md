@@ -4,6 +4,8 @@ on the fly, but only if they follow the pattern of "has_octocat?".
 Using :method_missing and :define_method, we create a program
 that more or less writes itself.
 
+![alt text](http://imgs.xkcd.com/comics/hofstadter.png)
+
 ### Languages and Tools
 ```
 	- Ruby
