@@ -9,5 +9,35 @@ that more or less writes itself.
 ### Languages and Tools
 ```
 	- Ruby
-	-RSpec
+	- RSpec
 ```
+
+### How to Open
+Clone this repository.
+```
+	$ git clone git@github.com:barr-code/meta_ruby.git
+```
+Change into the directory.
+```
+	$ cd meta_ruby
+```
+Run my tests.
+```
+	$ rspec
+```
+
+### Fire it Up
+```
+	$ irb
+	> require './lib/students'
+	> vic = Student.new
+	> vic.has_octocat?
+	> vic.award :octocat
+	> vic.has_octocat?
+```
+
+Hours and hours of fun!
+
+### What I Learned
+Meta programming is weird. Machines will take over when they learn to 
+write themselves.
