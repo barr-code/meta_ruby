@@ -19,4 +19,12 @@ describe Student do
 		expect(student.badges.count).to eq 2
 	end
 
+	it "a student is not winning to start with" do
+		expect(student.winning?).to be false
+	end
+
+	it "knows a student is winning after receiving a badge" do
+		student.award :octocat
+		expect(student.winning?).to be true
+	end
 end
