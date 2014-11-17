@@ -13,4 +13,10 @@ describe Student do
 		expect(student).to have_unixoid
 	end
 
+	it "knows how many badges it has" do
+		student.award :octocat
+		student.award :ronin
+		expect(student.badges.count).to eq 2
+	end
+
 end

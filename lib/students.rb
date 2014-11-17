@@ -1,4 +1,7 @@
 class Student
+
+	attr_reader :badges
+	
 	def initialize
 		@badges = []
 	end
